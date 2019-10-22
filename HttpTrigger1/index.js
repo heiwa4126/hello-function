@@ -1,16 +1,14 @@
-module.exports = async function (context, req) {
-	context.log('JavaScript HTTP trigger function processed a request.');
+'use strict'
+const util = require('util')
+const decimal = require('decimal')
+const foo1 = require('../foo1')
 
-	if (req.query.name || (req.body && req.body.name)) {
-		context.res = {
-			// status: 200, /* Defaults to 200 */
-			body: "Hello " + (req.query.name || req.body.name)
-		};
+module.exports = async function (context, req) {
+	let x = new decimal(10000)
+	let y = 3
+
+	context.res = {
+		// status: 200, /* Defaults to 200 */
+		body: util.format("Hello, world! 1+2=%s, %s/%s=%s", foo1.add1(1, 2), x, y, x.div(y))
 	}
-	else {
-		context.res = {
-			status: 400,
-			body: "Please pass a name on the query string or in the request body"
-		};
-	}
-};
+}

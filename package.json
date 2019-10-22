@@ -5,6 +5,8 @@
   "scripts": {
     "test": "echo \"No tests yet...\""
   },
-  "dependencies": {},
+  "dependencies": {
+    "decimal": "0.0.2"
+  },
   "devDependencies": {}
 }
