@@ -9,6 +9,6 @@ module.exports = async function (context, req) {
 
 	context.res = {
 		// status: 200, /* Defaults to 200 */
-		body: util.format("Hello, world! 1+2=%s, %s/%s=%s", foo1.add1(1, 2), x, y, x.div(y))
+		body: util.format("Hello, world!\n1+2=%s\n%s/%s=%s", foo1.add1(1, 2), x, y, x.div(y))
 	}
 }
